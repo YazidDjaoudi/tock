@@ -60,6 +60,7 @@ val mapper: ObjectMapper by lazy {
         .registerModule(IdJacksonModule())
         .registerModules(jacksonAdditionalModules)
         .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+        .configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false)
         .setSerializationInclusion(JsonInclude.Include.NON_NULL)
         .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
         .configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true)

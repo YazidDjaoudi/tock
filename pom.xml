@@ -265,7 +265,17 @@
             </dependency>
             <dependency>
                 <groupId>ai.tock</groupId>
-                <artifactId>tock-bot-orchestration</artifactId>
+                <artifactId>tock-bot-orchestration-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.tock</groupId>
+                <artifactId>tock-bot-orchestration-jackson</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.tock</groupId>
+                <artifactId>tock-bot-orchestration-rest</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -17,21 +17,24 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>tock-bot</artifactId>
+        <artifactId>tock-bot-orchestration</artifactId>
         <groupId>ai.tock</groupId>
         <version>20.3.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tock-bot-orchestration</artifactId>
-    <name>Tock Bot orchestration</name>
-    <description>Orchestration between bots</description>
-    <packaging>pom</packaging>
+    <artifactId>tock-bot-orchestration-rest</artifactId>
 
-    <modules>
-        <module>core</module>
-        <module>rest</module>
-        <module>jackson</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>ai.tock</groupId>
+            <artifactId>tock-bot-orchestration-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.tock</groupId>
+            <artifactId>tock-bot-engine</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

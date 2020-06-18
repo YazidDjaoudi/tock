@@ -19,10 +19,6 @@ package ai.tock.bot.orchestration.shared
 import ai.tock.bot.connector.ConnectorType
 import ai.tock.bot.definition.StoryDefinition
 import ai.tock.bot.engine.user.PlayerId
-import ai.tock.bot.engine.user.PlayerType
-import ai.tock.shared.Dice
-import com.fasterxml.jackson.annotation.JsonSubTypes
-import com.fasterxml.jackson.annotation.JsonTypeInfo
 
 data class OrchestrationTargetedBot(
     val botId: String,
@@ -38,14 +34,6 @@ data class OrchestrationMetaData(
     val recipientId: PlayerId
 )
 
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@JsonSubTypes(
-    JsonSubTypes.Type(value = OrchestrationSentence::class, name = "sentence")
-)
 interface OrchestrationData
 
 data class OrchestrationSentence(

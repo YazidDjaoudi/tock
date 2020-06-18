@@ -20,20 +20,7 @@ import ai.tock.bot.engine.action.Action
 import ai.tock.bot.engine.action.SendSentence
 import ai.tock.bot.engine.user.PlayerId
 import ai.tock.bot.engine.user.PlayerType
-import com.fasterxml.jackson.annotation.JsonSubTypes
-import com.fasterxml.jackson.annotation.JsonTypeInfo
 
-
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@JsonSubTypes(
-    JsonSubTypes.Type(value = SecondaryBotAvailableResponse::class, name = "availableResponse"),
-    JsonSubTypes.Type(value = SecondaryBotEligibilityResponse::class, name = "eligibleResponse"),
-    JsonSubTypes.Type(value = SecondaryBotNoResponse::class, name = "noResponse")
-)
 interface SecondaryBotResponse {
     val metaData : OrchestrationMetaData
     val indice : Double
